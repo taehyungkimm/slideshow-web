@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>슬라이드 관리</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-page">
+
+  <!-- ── Header ── -->
+  <header class="admin-header">
+    <div class="admin-header-left">
+      <h1>⚙️ 슬라이드 관리</h1>
+    </div>
+    <a href="index.html" class="btn-back">← 갤러리로</a>
+  </header>
+
+  <!-- ── Main Layout ── -->
+  <div class="admin-layout">
+
+    <!-- ── LEFT PANEL ── -->
+    <aside class="panel-left">
+
+      <!-- 슬라이드쇼 목록 -->
+      <div class="section-block">
+        <div class="section-header">
+          <span class="section-label">슬라이드쇼 목록</span>
+          <button class="btn-new" id="btn-new-slideshow">+ 새 슬라이드</button>
+        </div>
+        <ul class="slideshow-list" id="slideshow-list">
+          <li class="list-empty">로딩 중...</li>
+        </ul>
+      </div>
+
+      <!-- 편집 폼 -->
+      <div class="section-block" id="edit-panel" style="display:none">
+        <div class="section-header">
+          <span class="section-label" id="form-mode-label">새 슬라이드 등록</span>
+        </div>
+
+        <!-- 기본 정보 폼 -->
+        <div class="form-group">
+          <label>슬라이드 제목</label>
+          <input type="text" id="input-title" placeholder="예) 제주도 여행">
+        </div>
+        <div class="form-group">
+          <label>디렉토리명 <span class="hint">(영문·숫자·하이픈, 생성 후 변경 불가)</span></label>
+          <input type="text" id="input-id" placeholder="예) jeju-trip">
+          <div id="id-readonly-hint" style="display:none" class="hint-readonly">디렉토리명은 변경할 수 없습니다.</div>
+        </div>
+        <div class="form-group">
+          <label>그룹</label>
+          <input type="text" id="input-group" placeholder="예) 여행 (비워두면 General)">
+        </div>
+
+        <!-- 저장 / 취소 -->
+        <div class="form-actions-top">
+          <button class="btn-save" id="btn-save-info">💾 정보 저장</button>
+          <button class="btn-cancel" id="btn-cancel">취소</button>
+        </div>
+
+        <!-- 이미지 관리 (편집 모드만) -->
+        <div id="image-section" style="display:none">
+          <div class="section-header" style="margin-top:1.2rem">
+            <span class="section-label">이미지 관리</span>
+          </div>
+
+          <!-- 드래그앤드롭 업로드존 -->
+          <div class="drop-zone" id="drop-zone">
+            <div class="drop-zone-text">
+              <span>📂 이미지를 여기에 드래그하거나</span>
+              <label class="btn-file-pick">
+                파일 선택
+                <input type="file" id="file-input" multiple accept="image/*" style="display:none">
+              </label>
+            </div>
+            <div class="drop-hint">맨 끝에 추가됩니다</div>
+          </div>
+
+          <!-- 이미지 순서 목록 -->
+          <div class="image-list-wrap">
+            <ul class="image-list" id="image-list"></ul>
+          </div>
+        </div>
+
+        <!-- 슬라이드 삭제 (편집 모드만) -->
+        <div id="delete-section" style="display:none; margin-top:1rem">
+          <button class="btn-danger" id="btn-delete-slideshow">🗑️ 슬라이드쇼 삭제</button>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ── RIGHT PANEL (Preview) ── -->
+    <section class="panel-right">
+      <div class="preview-empty" id="preview-empty">
+        <div>
+          <p>← 슬라이드쇼를 선택하거나</p>
+          <p>새 슬라이드를 추가하세요</p>
+        </div>
+      </div>
+
+      <div class="preview-viewer" id="preview-viewer" style="display:none">
+        <div class="preview-header">
+          <span id="preview-title" class="preview-title"></span>
+          <span id="preview-counter" class="preview-counter"></span>
+        </div>
+        <div class="preview-slide" id="preview-slide">
+          <button class="nav-btn nav-prev" id="pv-prev">&#8249;</button>
+          <div class="preview-img-wrap">
+            <img id="preview-img" src="" alt="미리보기">
+          </div>
+          <button class="nav-btn nav-next" id="pv-next">&#8250;</button>
+        </div>
+        <div class="preview-thumbs" id="preview-thumbs"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 토스트 알림 -->
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
