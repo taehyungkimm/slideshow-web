@@ -1,0 +1,32 @@
+{
+  "slideshows": [
+    {
+      "id": "sample-nature",
+      "title": "Sample Nature",
+      "group": "General",
+      "directory": "slides/sample-nature",
+      "thumbnail": "slides/sample-nature/slide01.jpg",
+      "images": [
+        "slide01.jpg",
+        "slide02.jpg",
+        "slide03.jpg",
+        "slide04.jpg",
+        "slide05.jpg"
+      ]
+    },
+    {
+      "id": "sample-travel",
+      "title": "Sample Travel",
+      "group": "General",
+      "directory": "slides/sample-travel",
+      "thumbnail": "slides/sample-travel/slide01.jpg",
+      "images": [
+        "slide01.jpg",
+        "slide02.jpg",
+        "slide03.jpg",
+        "slide04.jpg",
+        "slide05.jpg"
+      ]
+    }
+  ]
+}

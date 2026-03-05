@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>슬라이드 뷰어</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="viewer-page">
+
+  <div id="viewer-loading" class="loading">
+    <div class="spinner"></div>
+    <p>로딩 중...</p>
+  </div>
+
+  <div id="viewer-error" class="error-msg" style="display:none">
+    <p>슬라이드쇼를 불러올 수 없습니다.</p>
+    <a href="index.html" class="btn-home">← 갤러리로 돌아가기</a>
+  </div>
+
+  <div id="viewer" class="viewer" style="display:none">
+    <!-- 상단 헤더 -->
+    <div class="viewer-header">
+      <a href="index.html" class="btn-home">← 갤러리</a>
+      <h2 id="viewer-title" class="viewer-title"></h2>
+      <span id="slide-counter" class="slide-counter"></span>
+    </div>
+
+    <!-- 슬라이드 영역 -->
+    <div class="slide-container" id="slide-container">
+      <button class="nav-btn nav-prev" id="btn-prev" aria-label="이전">&#8249;</button>
+      <div class="slide-wrapper">
+        <img id="slide-img" class="slide-img" src="" alt="슬라이드 이미지">
+      </div>
+      <button class="nav-btn nav-next" id="btn-next" aria-label="다음">&#8250;</button>
+    </div>
+
+    <!-- 하단 썸네일 스트립 -->
+    <div class="thumbnail-strip" id="thumbnail-strip"></div>
+  </div>
+
+  <script src="assets/js/viewer.js"></script>
+</body>
+</html>
